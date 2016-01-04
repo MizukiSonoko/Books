@@ -105,3 +105,35 @@ Y(s)=H(s)X(s)
 
 ## 問9
 ラプラス変換の定義に基づき解くだけ
+  
+X(z)= Sigma n = -INF to INF X[n]z<sup>-n</sup>  
+z:複素変数  
+z:遅れ演算子(Delay Operator)
+z:進み演算子(Advance Operator)  
+
+**Generallyと言う副詞はそうでない時もある事を強調している**
+ 
+### Ex4.1 
+X[n]= a<sup>n</sup>u[n]
+
+X(z)  
+=**Sigma k = -INF to INF a<sup>k</sup>u[k]z<sup>k</sup>**   
+=**Sigma k = 0 to INF a<sup>k</sup>z<sup>k</sup>**  
+=**Lim n->INF (1-(a/z)<sup>n+1</sup>)/(1-a/z)**
+
+a!=z)
+    1/(1-a/z) = z/(z-a)
+ここで```|a|<=|z|```の場合収束しない    
+  
+### Ex4.2  
+X[n]= a<sup>n</sup>u[-n-1]
+
+X(z)  
+=**Sigma k = -INF to INF a<sup>k</sup>u[-k-1]z<sup>k</sup>**   
+=**- Sigma k = 1 to INF a<sup>k</sup>z<sup>k</sup>**  
+=**1 - Sigma k = 0 to INF a<sup>k</sup>z<sup>k</sup>**  
+
+=**1 - Lim n->INF (1-(a<sub>-1</sub>/z)<sup>n+1</sup>)/(1-a/z)**
+
+
+**-u[-n-1]のZ変換は使わない**
